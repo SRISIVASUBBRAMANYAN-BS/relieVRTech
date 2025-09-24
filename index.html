@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RelieVR - VR Therapy for Recovery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Enhanced header with SRM logo placeholder and prominent RelieVR branding -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="srm-logo-placeholder">
+                        <i class="fas fa-university"></i>
+                        <span>SRM LOGO</span>
+                    </div>
+                    <div class="relievr-branding">
+                        <div class="logo">
+                            <i class="fas fa-vr-cardboard"></i>
+                            <h1>RelieVR</h1>
+                        </div>
+                        <p class="tagline">RelieVR Advanced VR Therapy for Post-Operative Recovery</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Simplified progress bar for 4 steps instead of 5 -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <!-- Step 1: Pre-Assessment Questionnaire -->
+            <section class="step-section active" id="step1">
+                <div class="step-header">
+                    <h2><i class="fas fa-clipboard-list"></i> Pre-Treatment Assessment</h2>
+                    <p>Please answer the following questions honestly to personalize your VR therapy experience</p>
+                </div>
+                
+                <div class="questionnaire-container" id="preQuestionnaire">
+                    <!-- Questions will be dynamically generated -->
+                </div>
+                
+                <button class="btn-primary" id="submitPreAssessment">
+                    Start VR Therapy <i class="fas fa-vr-cardboard"></i>
+                </button>
+            </section>
+
+            <!-- Step 2: VR Therapy Session -->
+            <section class="step-section" id="step2">
+                <div class="step-header">
+                    <h2><i class="fas fa-vr-cardboard"></i> RelieVR VR Therapy Session</h2>
+                    <p>Your personalized 3-minute VR therapy experience</p>
+                </div>
+                
+                <div class="vr-container">
+                    <div class="therapy-recommendation" id="therapyRecommendation">
+                        <!-- Recommendation will be displayed here -->
+                    </div>
+                    
+                    <div class="vr-status" id="vrStatus">
+                        <div class="vr-message">
+                            <i class="fas fa-cube"></i>
+                            <h3>RelieVR VR Therapy Ready</h3>
+                            <p>Your 3-minute VR therapy will begin automatically in fullscreen mode</p>
+                            <div class="vr-features">
+                                <span class="feature-tag"><i class="fas fa-expand"></i> Auto Fullscreen</span>
+                                <span class="feature-tag"><i class="fas fa-clock"></i> 3 Minutes</span>
+                                <span class="feature-tag"><i class="fas fa-globe"></i> Immersive Experience</span>
+                            </div>
+                        </div>
+                        
+                        <div class="session-timer">
+                            <i class="fas fa-clock"></i>
+                            <span id="sessionTime">00:00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 3: Post-Assessment -->
+            <section class="step-section" id="step3">
+                <div class="step-header">
+                    <h2><i class="fas fa-chart-line"></i> Post-Treatment Assessment</h2>
+                    <p>Let's see how you're feeling after the VR therapy session</p>
+                </div>
+                
+                <div class="questionnaire-container" id="postQuestionnaire">
+                    <!-- Post-assessment questions -->
+                </div>
+                
+                <button class="btn-primary" id="submitPostAssessment">
+                    Complete Assessment <i class="fas fa-check"></i>
+                </button>
+            </section>
+
+            <!-- Step 4: Results & Follow-up -->
+            <section class="step-section" id="step4">
+                <div class="step-header">
+                    <h2><i class="fas fa-trophy"></i> Treatment Results & Follow-up</h2>
+                    <p>Here's your progress summary and next steps</p>
+                </div>
+                
+                <div class="results-container" id="resultsContainer">
+                    <!-- Results will be displayed here -->
+                </div>
+                
+                <!-- Added follow-up schedule section -->
+                <div class="followup-schedule">
+                    <div class="schedule-card">
+                        <div class="schedule-header">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h3>Recommended Follow-up Schedule</h3>
+                        </div>
+                        <div class="schedule-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Next Session</h4>
+                                    <p>3 days from today</p>
+                                    <small>Continue VR therapy for optimal recovery</small>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Weekly Check-in</h4>
+                                    <p>1 week from today</p>
+                                    <small>Progress evaluation with healthcare provider</small>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Monthly Review</h4>
+                                    <p>1 month from today</p>
+                                    <small>Comprehensive recovery assessment</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn-secondary" id="downloadReport">
+                        <i class="fas fa-download"></i> Download PDF Report
+                    </button>
+                    <button class="btn-primary" id="scheduleFollowup">
+                        <i class="fas fa-calendar"></i> Schedule Next Session
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- VR Fullscreen Modal -->
+        <div class="vr-fullscreen-modal" id="vrModal">
+            <div class="vr-overlay">
+                <div class="vr-header">
+                    <h3><i class="fas fa-vr-cardboard"></i> RelieVR VR Therapy Session Active</h3>
+                    <div class="session-info">
+                        <span id="currentVideoInfo">3-Minute Therapy Session</span>
+                        <span id="modalSessionTime">00:00</span>
+                    </div>
+                </div>
+                
+                <video id="vrVideo" 
+                       preload="auto" 
+                       crossorigin="anonymous"
+                       playsinline
+                       style="display: block; width: 100%; height: 100%; object-fit: cover; background: #000;">
+                    <source src="videos/vr-therapy.mp4" type="video/mp4">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    Your browser does not support VR video playback.
+                </video>
+                
+                <div class="vr-progress">
+                    <div class="vr-progress-bar">
+                        <div class="vr-progress-fill" id="vrProgressFill"></div>
+                    </div>
+                    <p id="vrProgressText">VR therapy session in progress...</p>
+                </div>
+                
+                <button class="emergency-exit" id="emergencyExit">
+                    <i class="fas fa-times"></i> Emergency Exit
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
